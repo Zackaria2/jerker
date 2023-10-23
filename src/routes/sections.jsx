@@ -10,12 +10,14 @@ export const LoginPage = lazy(() => import('src/pages/login'));
 export const ProductsPage = lazy(() => import('src/pages/products'));
 export const Page404 = lazy(() => import('src/pages/page-not-found'));
 export const PropertiesPage = lazy(() => import('src/pages/properties'));
+export const TablePage = lazy(() => import('src/pages/table'));
+
 
 // ----------------------------------------------------------------------
 
 export default function Router() {
   const routes = useRoutes([
-    {
+    { path:'jerker',
       element: (
         <DashboardLayout>
           <Suspense>
@@ -24,8 +26,10 @@ export default function Router() {
         </DashboardLayout>
       ),
       children: [
-        { path: 'jerker', element: <IndexPage />, index: true },
-        { path: 'jerker/fastighetslista', element: <PropertiesPage /> },
+        {  element: <IndexPage />,index:true},
+        { path: 'fastighetslista', element: <PropertiesPage /> },
+        { path: 'table', element: <TablePage /> },
+
       ],
     },
     {
