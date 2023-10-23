@@ -99,3 +99,4 @@ AppCurrentVisits.propTypes = {
   subheader: PropTypes.string,
   title: PropTypes.string,
 };
+

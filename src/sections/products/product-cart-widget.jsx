@@ -1,6 +1,6 @@
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
-
+import { Tooltip } from '@mui/material';
 import Iconify from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
@@ -12,14 +12,14 @@ const StyledRoot = styled('div')(({ theme }) => ({
   cursor: 'pointer',
   position: 'fixed',
   alignItems: 'center',
-  top: theme.spacing(16),
+  top: theme.spacing(20.5),
   height: theme.spacing(5),
   paddingLeft: theme.spacing(2),
   paddingRight: theme.spacing(2),
-  paddingTop: theme.spacing(1.25),
+  // paddingTop: theme.spacing(1.25),
   boxShadow: theme.customShadows.z20,
   color: theme.palette.text.primary,
-  backgroundColor: theme.palette.background.paper,
+  backgroundColor: 'lightgreen',
   borderTopLeftRadius: Number(theme.shape.borderRadius) * 2,
   borderBottomLeftRadius: Number(theme.shape.borderRadius) * 2,
   transition: theme.transitions.create('opacity'),
@@ -31,9 +31,9 @@ const StyledRoot = styled('div')(({ theme }) => ({
 export default function CartWidget() {
   return (
     <StyledRoot>
-      <Badge showZero badgeContent={0} color="error" max={99}>
-        <Iconify icon="eva:shopping-cart-fill" width={24} height={24} />
-      </Badge>
+        <Tooltip title="Export to Excel" arrow>
+        <Iconify icon="vscode-icons:file-type-excel" width={28} height={30} />
+      </Tooltip>
     </StyledRoot>
   );
 }

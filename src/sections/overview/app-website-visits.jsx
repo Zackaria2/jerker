@@ -1,65 +1,43 @@
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
+export default class Barcelona extends Component {
+  constructor(props) {
+    super(props);
+    this.googleChecker = this.googleChecker.bind(this);
+    this.renderMap = this.renderMap.bind(this);
+  }
 
-import Chart, { useChart } from 'src/components/chart';
+  googleChecker() {
+    if (!window.google) {
+      setTimeout(this.googleChecker, 100);
+      console.log('not there yet');
+    } else {
+      console.log("we're good to go!!");
+      this.renderMap();
+    }
+  }
 
-// ----------------------------------------------------------------------
-
-export default function AppWebsiteVisits({ title, subheader, chart, ...other }) {
-  const { labels, colors, series, options } = chart;
-
-  const chartOptions = useChart({
-    colors,
-    plotOptions: {
-      bar: {
-        columnWidth: '16%',
+  renderMap() {
+    const coords = { lat: 41.375885, lng: 2.177813 };
+    // create map instance
+    new google.maps.Map(this.refs.mapContainer, {
+      zoom: 16,
+      center: {
+        lat: coords.lat,
+        lng: coords.lng,
       },
-    },
-    fill: {
-      type: series.map((i) => i.fill),
-    },
-    labels,
-    xaxis: {
-      type: 'datetime',
-    },
-    tooltip: {
-      shared: true,
-      intersect: false,
-      y: {
-        formatter: (value) => {
-          if (typeof value !== 'undefined') {
-            return `${value.toFixed(0)} visits`;
-          }
-          return value;
-        },
-      },
-    },
-    ...options,
-  });
+    });
+  }
 
-  return (
-    <Card {...other}>
-      <CardHeader title={title} subheader={subheader} />
+  componentDidMount() {
+    this.googleChecker();
+  }
 
-      <Box sx={{ p: 3, pb: 1 }}>
-        <Chart
-          dir="ltr"
-          type="line"
-          series={series}
-          options={chartOptions}
-          width="100%"
-          height={364}
-        />
-      </Box>
-    </Card>
-  );
+  render() {
+    return (
+      <div className="card map-holder" style={{ height: '500px' }}>
+        <div className="card-block" ref="mapContainer" />
+      </div>
+    );
+  }
 }
-
-AppWebsiteVisits.propTypes = {
-  chart: PropTypes.object,
-  subheader: PropTypes.string,
-  title: PropTypes.string,
-};
