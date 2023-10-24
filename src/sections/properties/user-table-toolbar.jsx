@@ -52,9 +52,9 @@ export default function UserTableToolbar({ numSelected, filterName, onFilterName
           </IconButton>
         </Tooltip>
       ) : ( */}
-        <Tooltip title="Export to Excel">
+        <Tooltip title="Exportera till Excel">
           <Button style={{backgroundColor:'#CFEAE3',color:'#3C998B'}} variant='contained'  startIcon={<Iconify icon="file-icons:microsoft-excel"/>}>
-            Export 
+            Exportera
           </Button>
         </Tooltip>
       {/* )} */}

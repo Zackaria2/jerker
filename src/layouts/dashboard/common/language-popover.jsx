@@ -4,10 +4,16 @@ import Box from '@mui/material/Box';
 import Popover from '@mui/material/Popover';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
+import Iconify from '../../../components/iconify/iconify';
 
 // ----------------------------------------------------------------------
 
 const LANGS = [
+  {
+    value:'sw',
+    label:'Sweden',
+    icon: '/assets/icons/ic_flag_sw.svg',
+  },
   {
     value: 'en',
     label: 'English',
