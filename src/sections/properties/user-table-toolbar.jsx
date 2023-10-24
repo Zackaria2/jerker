@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
-
+import { Button } from '@mui/material';
 import Iconify from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
@@ -45,19 +45,19 @@ export default function UserTableToolbar({ numSelected, filterName, onFilterName
         />
       )}
 
-      {numSelected > 0 ? (
+      {/* {numSelected > 0 ? (
         <Tooltip title="Delete">
           <IconButton>
             <Iconify icon="eva:trash-2-fill" />
           </IconButton>
         </Tooltip>
-      ) : (
-        <Tooltip title="Filter list">
-          <IconButton>
-            <Iconify icon="ic:round-filter-list" />
-          </IconButton>
+      ) : ( */}
+        <Tooltip title="Export to Excel">
+          <Button style={{backgroundColor:'#CFEAE3',color:'#3C998B'}} variant='contained'  startIcon={<Iconify icon="file-icons:microsoft-excel"/>}>
+            Export 
+          </Button>
         </Tooltip>
-      )}
+      {/* )} */}
     </Toolbar>
   );
 }

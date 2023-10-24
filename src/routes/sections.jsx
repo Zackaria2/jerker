@@ -27,8 +27,8 @@ export default function Router() {
       ),
       children: [
         {  element: <IndexPage />,index:true},
-        { path: 'fastighetslista', element: <PropertiesPage /> },
-        { path: 'table', element: <TablePage /> },
+        // { path: 'fastighetslista', element: <PropertiesPage /> },
+        { path: 'fastighetslista', element: <TablePage /> },
 
       ],
     },
@@ -44,6 +44,10 @@ export default function Router() {
       path: '*',
       element: <Navigate to="/404" replace />,
     },
+    {
+      path: '/',
+      element: <Navigate to='/jerker' replace />
+    }
   ]);
 
   return routes;

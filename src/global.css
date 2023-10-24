@@ -1,2 +1,14 @@
 /* scrollbar */
 @import 'simplebar-react/dist/simplebar.min.css';
+.wrap-text {
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  .custom-header {
+    background-color: #F4F6F8;
+  }
+  .centered-row {
+    display: flex !important;
+    align-items: center !important;
+  }

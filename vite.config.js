@@ -22,12 +22,9 @@ export default defineConfig({
   },
   server: {
     port: 3030,
-    open: true,
-    base: '/jerker/',
+    base:'jerker'
   },
   preview: {
     port: 3030,
-    open: true,
-    base: '/jerker/',
   },
 });
