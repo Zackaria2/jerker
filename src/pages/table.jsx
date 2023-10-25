@@ -11,7 +11,35 @@ import building4 from '/assets/images/properties/property4.jpg'
 import building5 from '/assets/images/properties/property5.jpg'
 import '../global.css';
 
+const localizedTextsMap = {
+    columnMenuUnsort: "não classificado",
+    columnMenuSortAsc: "Sortera från A till Ö",
+    columnMenuSortDesc: "Sortera från Ö till A",
+    columnMenuFilter: "Filtera",
+    columnMenuHideColumn: "Dölj kolumn",
+    columnMenuManageColumns: "Hantera kolumner",
+    filterPanelColumns: 'Kolumner',
+    filterPanelInputLabel: 'Värde',
+    filterPanelOperators: 'Operatör',
+    filterPanelInputPlaceholder: 'Filtervärde',
+    noResultsOverlayLabel: 'Inga resultat funna.',
+    footerRowPerPage: 'Rader per sida',
+    // Filter operators text
+  filterOperatorContains: 'innehåller',
+  filterOperatorEquals: 'lika',
+  filterOperatorStartsWith: 'börjar med',
+  filterOperatorEndsWith: 'slutar med',
+  filterOperatorIs: 'är',
+  filterOperatorNot: 'är inte',
+  filterOperatorAfter: 'är efter',
+  filterOperatorOnOrAfter: 'är på eller efter',
+  filterOperatorBefore: 'är innan',
+  filterOperatorOnOrBefore: 'är på eller innan',
+  filterOperatorIsEmpty: 'är tom',
+  filterOperatorIsNotEmpty: 'är inte tom',
+  filterOperatorIsAnyOf: 'är någon av',
 
+};
 const columns = [
   { field: 'building', headerName: '', width: 140,   renderCell: (params) => (
     <img
@@ -256,10 +284,10 @@ export default function DataTable() {
         headerHeight={90}
         initialState={{
           pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
+            paginationModel: { page: 0, pageSize: 5 ,},
           },
         }}
-        pageSizeOptions={[5, 10,15]}
+        localeText={localizedTextsMap}
         columnHeaderHeight={70}
       />
     </Card>

@@ -9,7 +9,7 @@ import { shadows } from './shadows';
 import { overrides } from './overrides';
 import { typography } from './typography';
 import { customShadows } from './custom-shadows';
-
+import { svSE } from '@mui/material/locale';
 // ----------------------------------------------------------------------
 
 export default function ThemeProvider({ children }) {
@@ -24,9 +24,12 @@ export default function ThemeProvider({ children }) {
     []
   );
 
-  const theme = createTheme(memoizedValue);
+  const theme = createTheme({
+    ...memoizedValue,
+   svSE, // Set the localization here
+  });
 
-  theme.components = overrides(theme);
+  theme.components = overrides(theme)
 
   return (
     <MUIThemeProvider theme={theme}>

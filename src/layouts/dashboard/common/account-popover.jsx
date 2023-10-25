@@ -15,15 +15,15 @@ import { account } from 'src/_mock/account';
 
 const MENU_OPTIONS = [
   {
-    label: 'Home',
+    label: 'Hem',
     icon: 'eva:home-fill',
   },
   {
-    label: 'Profile',
+    label: 'Profil',
     icon: 'eva:person-fill',
   },
   {
-    label: 'Settings',
+    label: 'inställningar',
     icon: 'eva:settings-2-fill',
   },
 ];
@@ -108,7 +108,7 @@ export default function AccountPopover() {
           onClick={handleClose}
           sx={{ typography: 'body2', color: 'error.main', py: 1.5 }}
         >
-          Logout
+          Logga ut
         </MenuItem>
       </Popover>
     </>

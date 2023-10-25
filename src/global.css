@@ -12,3 +12,12 @@
     display: flex !important;
     align-items: center !important;
   }
+  @media (max-width: 600px) {
+    .btn {
+      font-size: 0 !important;  /* Hide the text by setting font-size to 0 */
+      padding: 12px !important; /* Adjust padding as needed */
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+  }

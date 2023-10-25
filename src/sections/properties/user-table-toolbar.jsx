@@ -10,7 +10,6 @@ import { Button } from '@mui/material';
 import Iconify from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
-
 export default function UserTableToolbar({ numSelected, filterName, onFilterName }) {
   return (
     <Toolbar
@@ -33,7 +32,7 @@ export default function UserTableToolbar({ numSelected, filterName, onFilterName
         <OutlinedInput
           value={filterName}
           onChange={onFilterName}
-          placeholder="Sok efter byggnad..."
+          placeholder="Sök efter byggnad..."
           startAdornment={
             <InputAdornment position="start">
               <Iconify
@@ -52,11 +51,9 @@ export default function UserTableToolbar({ numSelected, filterName, onFilterName
           </IconButton>
         </Tooltip>
       ) : ( */}
-        <Tooltip title="Exportera till Excel">
-          <Button style={{backgroundColor:'#CFEAE3',color:'#3C998B'}} variant='contained'  startIcon={<Iconify icon="file-icons:microsoft-excel"/>}>
+          <Button style={{backgroundColor:'#CFEAE3',color:'#3C998B'}} className='btn' variant='contained'  startIcon={<Iconify icon="file-icons:microsoft-excel"/>}>
             Exportera
           </Button>
-        </Tooltip>
       {/* )} */}
     </Toolbar>
   );
