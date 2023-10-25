@@ -3,6 +3,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import { Container,Stack,Typography,Button, Card,IconButton,Popover,MenuItem } from '@mui/material';
 import Iconify from '../components/iconify/iconify';
 import UserTableToolbar from '../sections/properties/user-table-toolbar';
+import { Helmet } from 'react-helmet-async';
 import building1 from '/assets/images/properties/property1.jpg'
 import building2 from '/assets/images/properties/property2.jpg'
 import building3 from '/assets/images/properties/property3.jpg'
@@ -235,6 +236,9 @@ const rows = [
 export default function DataTable() {
   return (
     <Container maxWidth="xl">
+        <Helmet>
+        <title> Fastighetsvyn | Prototyp Jerker </title>
+      </Helmet>
     <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
     <Typography variant="h4">Fastighetslista</Typography>
 

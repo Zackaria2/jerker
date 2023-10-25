@@ -1,5 +1,9 @@
 {
   "rewrites":  [
-    {"source": "/jerker", "destination": "/"}
+   {
+    "source": "/(.*)",
+    "destination": "/"
+  }
   ]
+  
 }
